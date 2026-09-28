@@ -1,0 +1,126 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Writing process: The Map Was the Start of the Argument</title>
+<style>
+:root{--ink:#202b2a;--mute:#596562;--rule:#dce1db;--paper:#fffefb;--kept:#c9cdc5;--new:#375e78;--src:#35765d;--soft:#f3f5ef}
+*{box-sizing:border-box}
+body{margin:0;background:#eaece6;color:var(--ink);font:14px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.page{max-width:1000px;margin:40px auto;background:var(--paper);padding:42px 56px 30px;border-top:4px solid var(--src);box-shadow:0 8px 48px #26352c0b}
+.masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:16px;margin-bottom:30px;gap:20px}
+.brand{font:600 25px Georgia,serif;letter-spacing:-1px}
+.kicker,.eyebrow{font-size:10px;font-weight:650;letter-spacing:.13em;text-transform:uppercase}
+.kicker{color:var(--mute)}
+h1{font:400 42px/1.12 Georgia,"Iowan Old Style",serif;letter-spacing:-1.25px;margin:0 0 22px;max-width:20ch;overflow-wrap:anywhere}
+.by{display:flex;flex-wrap:wrap;gap:16px 36px;font-size:13px;padding-bottom:24px}
+.by div{display:grid;gap:4px}
+.by .eyebrow{color:var(--mute);font-size:9px}
+.summary{border-left:2px solid var(--src);padding:4px 0 4px 20px;max-width:77ch;margin:0 0 28px}
+.summary .eyebrow{color:var(--src);margin-bottom:8px}
+.summary p{font-size:14px;line-height:1.65;margin:0 0 8px}
+.summary p:last-child{margin:0}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:18px 0;margin:0 0 30px}
+.stat{padding:0 18px;border-left:1px solid var(--rule)}
+.stat:first-child{padding-left:0;border:0}
+.stat b{display:block;font:400 36px/1.1 Georgia,serif;font-variant-numeric:lining-nums tabular-nums;margin-bottom:7px}
+.stat span{display:block;font-size:11px;line-height:1.45;color:var(--mute);max-width:16ch}
+.section-heading{display:flex;align-items:baseline;gap:12px;margin:28px 0 18px;padding-top:18px;border-top:1px solid var(--rule)}
+.section-heading h2{font:400 24px/1.2 Georgia,serif;letter-spacing:-.35px;margin:0}
+.section-heading .section-no{font:11px ui-monospace,monospace;color:var(--src)}
+.timeline-heading{border:0;padding:0;margin-top:0}
+.timeline-grid{display:grid;grid-template-columns:minmax(0,2.2fr) minmax(0,1fr);gap:28px}
+.chart{min-width:0}
+svg{width:100%;height:auto;display:block;overflow:visible}
+.grid{stroke:var(--rule)} .axis{font-size:11px;fill:var(--mute)}
+.area{fill:var(--new);opacity:.07} .line{fill:none;stroke:var(--new);stroke-width:2.2}
+.dot{fill:var(--paper);stroke:var(--new);stroke-width:2.4} .lbl{font-size:12px;font-weight:650;fill:var(--ink)}
+.note{fill:var(--src)} .nlbl{font-size:10px;fill:var(--src)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:11px;color:var(--mute);margin-top:12px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:1px;margin-right:5px;vertical-align:0}
+.activity{padding:16px;background:var(--soft);border:1px solid var(--rule)}
+.activity h3{font:600 11px/1.4 -apple-system,sans-serif;margin:0 0 10px}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:3px}
+.dow{font-size:9px;color:var(--mute);text-align:center}
+.day{position:relative;aspect-ratio:1;border-radius:2px;font-size:10px;color:var(--mute);display:flex;align-items:center;justify-content:center}
+.day.on{background:var(--new);color:#fff} .day.out{visibility:hidden}
+.m{position:absolute;bottom:2px;width:3px;height:3px;border-radius:50%;background:#fff}
+.activity p{font-size:10px;line-height:1.5;color:var(--mute);margin:10px 0 0}
+.editor-stats{font-size:11px;color:var(--mute);margin:14px 0 0;padding-top:12px;border-top:1px solid var(--rule)}
+.editor-stats b{font-weight:600;color:var(--ink)}
+.draft-legend{margin:-4px 0 18px}
+.draft{padding:18px 0;border-top:1px solid var(--rule);break-inside:avoid}
+.draft:first-child{border-top:0;padding-top:0}
+.dh{display:flex;gap:12px;align-items:baseline}
+.dn{font:11px ui-monospace,monospace;color:var(--mute);flex:none}
+.nm{font-size:13px;font-weight:650;overflow-wrap:anywhere;min-width:0}
+.dt{margin-left:auto;color:var(--mute);font-size:11px;white-space:nowrap}
+.bar{display:flex;height:8px;margin:12px 0 7px}
+.bar span{display:block;height:100%} .bar .k{background:var(--kept)} .bar .t{background:var(--src)} .bar .w{background:var(--new)}
+.meta{font-size:11px;color:var(--mute);line-height:1.55}
+.ps{list-style:none;padding:0;margin:12px 0 0}
+.ps li{font-size:11px;margin:10px 0 0;padding-left:12px;border-left:2px solid var(--rule)}
+.ps q{display:block;margin-top:5px;color:var(--mute);font:italic 13px/1.5 Georgia,serif;quotes:"“" "”"}
+.tag{display:inline;font-size:10px;padding:2px 5px;margin-left:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone;overflow-wrap:anywhere}
+.tag.src{background:#edf3ec;color:#285b43} .tag.one{background:#f5efdf;color:#71581f}
+.method-note{margin:0;padding:12px 14px;background:var(--soft);border-left:2px solid var(--rule)}
+.table-wrap{width:100%;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:10px;text-align:left}
+caption{text-align:left;font-size:11px;color:var(--mute);margin:0 0 12px}
+thead th{font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--mute);border-bottom:1px solid var(--ink);padding:0 12px 8px 0}
+tbody th,td{font-weight:400;border-bottom:1px solid var(--rule);padding:10px 12px 10px 0;vertical-align:top}
+tbody th{font-weight:600;overflow-wrap:anywhere;max-width:160px}
+td.h{font:9px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--mute);word-break:break-all;width:31%;padding-right:0}
+.evidence-note{font-size:11px;color:var(--mute);line-height:1.6;margin:18px 0 24px;max-width:90ch}
+.footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--rule);padding-top:14px;font-size:10px;color:var(--mute)}
+.footer a{font-weight:650;text-decoration:none}
+@media screen and (max-width:720px){
+ .page{padding:24px;margin:0;border-top-width:3px} h1{font-size:35px} .masthead{margin-bottom:24px}
+ .timeline-grid{grid-template-columns:1fr} .activity{max-width:320px} .stats{gap:20px 0;grid-template-columns:repeat(2,minmax(0,1fr))}
+ .stat:nth-child(3){padding-left:0;border:0} .stat b{font-size:32px} .dh{flex-wrap:wrap;gap:4px 8px}
+ .dt{width:100%;margin:0 0 0 24px} table{min-width:570px} .footer{flex-wrap:wrap}
+}
+@media print{
+ body{background:#fff;font-size:10pt} .page{max-width:none;margin:0;padding:0;box-shadow:none;border:0}
+ .masthead{padding-bottom:10px;margin-bottom:20px} h1{font-size:32pt} .summary p{font-size:10pt}
+ .overview{break-after:page} .details .section-heading:first-child{margin-top:0;border:0;padding-top:0}
+ .draft{padding:8px 0} .ps{margin-top:7px} .ps li{margin-top:6px} .ps q{font-size:10pt;margin-top:3px}
+ .section-heading{break-after:avoid;margin:14px 0 12px;padding-top:12px}
+ .draft-legend{margin-bottom:12px} .bar{margin-top:8px} .method-note{padding:8px 10px}
+ tbody th,td{padding-top:6px;padding-bottom:6px} .evidence-note{margin:12px 0;font-size:10px}
+ .table-wrap{overflow:visible} tr,.activity,.stats{break-inside:avoid} table{min-width:0}
+ .footer{margin-top:10px;padding-top:10px} *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@page{size:A4;margin:17mm}
+</style></head><body><main class="page">
+<section class="overview" aria-label="Writing overview">
+<header>
+<div class="masthead"><span class="brand">Authored.</span><span class="kicker">Writing process report</span></div>
+<h1>The Map Was the Start of the Argument</h1>
+<div class="by">
+<div><span class="eyebrow">Prepared for</span><span>Maya Okafor</span></div>
+<div><span class="eyebrow">Recorded period</span><span>Sep 8 – Sep 20, 2026</span></div>
+<div><span class="eyebrow">Evidence preserved</span><span>Sep 27, 2026</span></div>
+</div>
+</header>
+<section class="summary" aria-label="Writer account"><div class="eyebrow">The writer’s account</div><p>I wrote this essay myself over about two weeks in September. It started as an outline on September 8, and the Whitehead section began as reading notes I typed up on September 13.</p><p>The last part, on why the Board of Health rejected Snow, came after the Writing Center asked me about it on September 16. I wrote it in my last few sessions before submitting. I&#x27;m happy to walk through any of the drafts with you.</p></section>
+<div class="stats"><div class="stat"><b>13</b><span>days in the recorded timeline</span></div><div class="stat"><b>6</b><span>dates with recorded activity</span></div><div class="stat"><b>3</b><span>saved drafts</span></div><div class="stat"><b>578</b><span>words in the final draft</span></div></div>
+<div class="section-heading timeline-heading"><span class="section-no">01</span><h2>The writing timeline</h2></div>
+<div class="timeline-grid"><div class="chart">
+<svg viewBox="0 0 760 250" role="img" aria-label="Word count of each draft over time"><line x1="56" x2="736" y1="204.0" y2="204.0" class="grid"/><text x="48" y="208.0" class="axis" text-anchor="end">0</text><line x1="56" x2="736" y1="151.8" y2="151.8" class="grid"/><text x="48" y="155.8" class="axis" text-anchor="end">200</text><line x1="56" x2="736" y1="99.6" y2="99.6" class="grid"/><text x="48" y="103.6" class="axis" text-anchor="end">400</text><line x1="56" x2="736" y1="47.4" y2="47.4" class="grid"/><text x="48" y="51.4" class="axis" text-anchor="end">600</text><text x="82.2" y="222" class="axis" text-anchor="middle">8</text><text x="134.5" y="222" class="axis" text-anchor="middle">9</text><text x="186.8" y="222" class="axis" text-anchor="middle">10</text><text x="239.1" y="222" class="axis" text-anchor="middle">11</text><text x="291.4" y="222" class="axis" text-anchor="middle">12</text><text x="343.7" y="222" class="axis" text-anchor="middle">13</text><text x="396.0" y="222" class="axis" text-anchor="middle">14</text><text x="448.3" y="222" class="axis" text-anchor="middle">15</text><text x="500.6" y="222" class="axis" text-anchor="middle">16</text><text x="552.9" y="222" class="axis" text-anchor="middle">17</text><text x="605.2" y="222" class="axis" text-anchor="middle">18</text><text x="657.5" y="222" class="axis" text-anchor="middle">19</text><text x="709.8" y="222" class="axis" text-anchor="middle">20</text><text x="56" y="244" class="axis">September 2026</text><path d="M262.3,204.0 L262.3,161.2 L511.6,118.4 L730.1,53.2 L730.1,204.0 Z" class="area"/><polyline points="262.3,161.2 511.6,118.4 730.1,53.2" class="line"/><circle cx="262.3" cy="161.2" r="5" class="dot"/><text x="262.3" y="149.2" class="lbl" text-anchor="middle">164</text><circle cx="511.6" cy="118.4" r="5" class="dot"/><text x="511.6" y="106.4" class="lbl" text-anchor="middle">328</text><circle cx="730.1" cy="53.2" r="5" class="dot"/><text x="730.1" y="41.2" class="lbl" text-anchor="middle">578</text><path d="M363.4,197.0 l6,7 -6,7 -6,-7 Z" class="note"><title>notes_whitehead.txt</title></path><text x="372.4" y="200.0" class="nlbl">notes whitehead</text><path d="M92.5,197.0 l6,7 -6,7 -6,-7 Z" class="note"><title>outline.txt</title></path><text x="101.5" y="200.0" class="nlbl">outline</text></svg>
+<div class="legend"><span><i style="background:var(--new)"></i>Words in each saved draft</span><span><i style="background:var(--src)"></i>Notes &amp; outlines</span></div>
+</div><aside class="activity"><h3>September 2026</h3>
+<div class="cal"><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div><div class="dow">S</div><div class="day out" title="Sep 7"><span>7</span></div><div class="day on" title="Sep 8: outline.txt"><span>8</span><span class="m n"></span></div><div class="day" title="Sep 9"><span>9</span></div><div class="day on" title="Sep 10: essay_draft1.docx; essay_draft2.docx; essay_final.docx"><span>10</span></div><div class="day on" title="Sep 11: essay_draft1.docx"><span>11</span><span class="m d"></span></div><div class="day" title="Sep 12"><span>12</span></div><div class="day on" title="Sep 13: notes_whitehead.txt"><span>13</span><span class="m n"></span></div><div class="day" title="Sep 14"><span>14</span></div><div class="day" title="Sep 15"><span>15</span></div><div class="day on" title="Sep 16: essay_draft2.docx"><span>16</span><span class="m d"></span></div><div class="day" title="Sep 17"><span>17</span></div><div class="day" title="Sep 18"><span>18</span></div><div class="day" title="Sep 19"><span>19</span></div><div class="day on" title="Sep 20: essay_final.docx"><span>20</span><span class="m d"></span></div></div>
+<p><b>6 dates with recorded activity.</b> Highlighted dates come from document records and file timestamps.</p>
+</aside></div>
+<p class="editor-stats"><b>Editor metadata</b> &nbsp; 10h 11m editing time recorded by the editor · 14 recorded editing-session markers. These fields support the account; they do not verify time spent writing.</p>
+</section>
+<section class="details" aria-label="Drafts and evidence">
+<div class="section-heading"><span class="section-no">02</span><h2>How the drafts developed</h2></div>
+<div class="legend draft-legend"><span><i style="background:var(--kept)"></i>Carried forward</span><span><i style="background:var(--src)"></i>Wording also in notes</span><span><i style="background:var(--new)"></i>Other new text</span></div>
+<div class="drafts"><article class="draft"><div class="dh"><span class="dn">01</span><span class="nm">essay_draft1.docx</span><span class="dt">Fri Sep 11, 22:40</span></div><div class="bar"><span class="w" style="width:28.37%"></span></div><div class="meta">164 words · 186 min editing</div></article><article class="draft"><div class="dh"><span class="dn">02</span><span class="nm">essay_draft2.docx</span><span class="dt">Wed Sep 16, 17:02</span></div><div class="bar"><span class="k" style="width:26.82%"></span><span class="t" style="width:10.21%"></span><span class="w" style="width:19.72%"></span></div><div class="meta">328 words · +173 / −9 · 95% of previous kept · 402 min editing</div><ul class="ps"><li><b>121 new words</b> <span class="tag src">overlap with notes_whitehead.txt · 49% shared wording</span><q>The person who did the most to confirm Snow&#x27;s theory started out trying to disprove it. Henry Whitehead was the curate of St Luke&#x27;s, and he …</q></li></ul></article><article class="draft"><div class="dh"><span class="dn">03</span><span class="nm">essay_final.docx</span><span class="dt">Sun Sep 20, 21:18</span></div><div class="bar"><span class="k" style="width:52.94%"></span><span class="t" style="width:0.00%"></span><span class="w" style="width:47.06%"></span></div><div class="meta">578 words · +272 / −22 · 93% of previous kept · 611 min editing</div><ul class="ps"><li><b>174 new words</b> <span class="tag one">new since the previous draft</span><q>Reading the report now, what stands out is not that they ignored the evidence but that they fitted it into the theory they already had. That …</q></li><li><b>50 new words</b> <q>It is a satisfying story and it is mostly true, but I think it puts the weight in the wrong place. The map did not persuade …</q></li></ul></article></div>
+<p class="meta method-note">Green counts wording in the highlighted passages that matches five-word phrases in the notes, ignoring case and punctuation. A match suggests a connection, not proof of origin. Additions appeared between saved drafts; they do not establish a single paste or writing event.</p>
+<div class="section-heading"><span class="section-no">03</span><h2>The evidence file</h2></div><div class="table-wrap"><table><caption>5 preserved files · Full SHA-256 fingerprints for verification</caption><thead><tr><th scope="col">No.</th><th scope="col">File</th><th scope="col">Last modified</th><th scope="col">Size</th><th scope="col">SHA-256</th></tr></thead><tbody><tr><td>01</td><th scope="row">essay_draft1.docx</th><td>Sep 11, 2026 22:40</td><td>3,718 B</td><td class="h">0a6efe21819dc42d628c183ba8ccb3d8332e3e36c949c4e4a3a8a07228c0c20e</td></tr><tr><td>02</td><th scope="row">essay_draft2.docx</th><td>Sep 16, 2026 17:02</td><td>4,568 B</td><td class="h">e4b77863e88608235752759838c0601ab147b0347ce9f9ad877b2da923ee4878</td></tr><tr><td>03</td><th scope="row">essay_final.docx</th><td>Sep 20, 2026 21:18</td><td>4,939 B</td><td class="h">b5af296e7d05a471b194dbeb43a0e47f6e8137156c08dc7c03470cfe296070d4</td></tr><tr><td>04</td><th scope="row">notes_whitehead.txt</th><td>Sep 13, 2026 21:03</td><td>682 B</td><td class="h">dd97f73f1e703fdd608cfacb276b28c215489cbb5f8792945d59b6e01aac59ac</td></tr><tr><td>05</td><th scope="row">outline.txt</th><td>Sep 8, 2026 16:45</td><td>611 B</td><td class="h">b1a17f554c577dedd7df7a8381e9d8951d12c41ab46204aeb9cff89979d743cc</td></tr></tbody></table></div>
+<p class="evidence-note"><b>Reading this evidence.</b> Dates and editing statistics are recorded by software and can change when files are copied, synced or converted. They support the writer’s account; drafts, notes and live version history remain the primary evidence. File fingerprints confirm file identity, not authorship.</p>
+</section>
+<footer class="footer"><span>Prepared with <a href="https://github.com/forrestelliott/authored">Authored</a> · Writing, with a record.</span><span>Snapshot preserved Sep 27, 2026</span></footer>
+</main></body></html>
